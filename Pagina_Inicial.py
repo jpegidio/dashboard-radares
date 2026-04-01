@@ -30,10 +30,8 @@ st.markdown("Os dados presentes nesses relatórios são extraídos do sistema Si
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    # O estilo CSS abaixo aumenta a altura dos botões apenas nesta página
     st.markdown("""
     <style>
-    /* 1. Ajusta o texto que já existe dentro do botão */
     div.stButton > button p {
         font-size: 30px !important;
         font-weight: bold;
@@ -41,7 +39,6 @@ with col1:
         line-height: 1.2 !important;
     }
 
-    /* 2. Adiciona o texto novo apenas UMA vez no final do botão */
     div.stButton > button::after {
         content: 'Por Equipamento'; 
         display: block;
@@ -53,7 +50,6 @@ with col1:
         width: 100%;
     }
 
-    /* 3. Ajusta a altura e centralização do conteúdo */
     div.stButton > button {
         height: 200px; 
         border-radius: 15px;
@@ -65,5 +61,40 @@ with col1:
     </style>
     """, unsafe_allow_html=True)
 
-    if st.button("🏎 \n\n Velocidade Média", use_container_width=True):
+    if st.button("⏱️ \n\n Velocidade Média", use_container_width=True):
         st.switch_page("pages/1_velocidade_media.py")
+
+with col2:
+    st.markdown("""
+    <style>
+    div.stButton > button p {
+        font-size: 30px !important;
+        font-weight: bold;
+        margin: 0px !important;
+        line-height: 1.2 !important;
+    }
+
+    div.stButton > button::after {
+        content: ''; 
+        display: block;
+        font-size: 16px !important;
+        font-weight: normal;
+        color: #666;
+        margin-top: 10px;
+        text-align: center;
+        width: 100%;
+    }
+
+    div.stButton > button {
+        height: 200px; 
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+    if st.button("🚗🚛🏍️🚌 \n\n Contagem por Classificação", use_container_width=True):
+        st.switch_page("pages/2_Contagem_por_Classificação.py")
