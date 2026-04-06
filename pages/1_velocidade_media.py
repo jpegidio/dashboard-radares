@@ -124,11 +124,13 @@ with col2:
 
 #  gráfico
 st.write("---")
-st.markdown("<h2 style='text-align: center;'>Evolução da Velocidade Média em 2026</h2>", unsafe_allow_html=True)
+# Pega os anos selecionados, converte para texto e junta com vírgula
+anos_selecionados = ", ".join(map(str, filtro_ano)) 
+st.markdown(f"<h2 style='text-align: center;'>Evolução da Velocidade Média em {anos_selecionados}</h2>", unsafe_allow_html=True)
 df_grafico = df.copy()
 if filtro_loc:
     df_grafico = df_grafico[df_grafico['LOCALIZACAO'].isin(filtro_loc)]
-df_grafico = df_grafico[df_grafico['Ano'] == 2026]
+df_grafico = df_grafico[df_grafico['Ano'].isin(filtro_ano)]
 df_agrupado = df_grafico.groupby(['Mes_Num', 'Mês'])['VELOCIDADE MEDIA'].mean().reset_index()
 df_agrupado = df_agrupado.sort_values(by='Mes_Num')
 fig = px.line(

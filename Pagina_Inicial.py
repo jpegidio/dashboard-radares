@@ -98,3 +98,38 @@ with col2:
 
     if st.button("🚗🚛🏍️🚌 \n\n Contagem por Classificação", use_container_width=True):
         st.switch_page("pages/2_Contagem_por_Classificação.py")
+
+with col3:
+    st.markdown("""
+    <style>
+    div.stButton > button p {
+        font-size: 30px !important;
+        font-weight: bold;
+        margin: 0px !important;
+        line-height: 1.2 !important;
+    }
+
+    div.stButton > button::after {
+        content: ''; 
+        display: block;
+        font-size: 16px !important;
+        font-weight: normal;
+        color: #666;
+        margin-top: 10px;
+        text-align: center;
+        width: 100%;
+    }
+
+    div.stButton > button {
+        height: 200px; 
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+    if st.button("🚗 \n\n Fluxo por Hora", use_container_width=True):
+        st.switch_page("pages/3_Fluxo_por_Hora.py")
